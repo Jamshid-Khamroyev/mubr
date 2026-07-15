@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   load: false,
-  link: "https://quiz-arena-for-school-backend.onrender.com"
+  link: "https://api-mubr.onrender.com"
 }
 
 export const counterSlice = createSlice({

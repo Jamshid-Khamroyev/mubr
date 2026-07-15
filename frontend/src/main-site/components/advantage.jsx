@@ -1,6 +1,4 @@
-import axios from "axios";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import {
   FaTrophy,
   FaChartBar,
@@ -70,16 +68,6 @@ const cardVariant = {
 };
 
 const FeaturesSection = () => {
-  const navigate = useNavigate()
-
-  const getTeam = async() => {
-    const res = await axios.get(`http://localhost:4000/api/team/get-all`, { withCredentials: true })
-    console.log(res);
-  }
-
-  useEffect(() => {
-    getTeam()
-  }, [])
   return (
     <section className="w-full min-h-screen mb-12 pt-24 max-md:pt-32 px-4 bg-gradient-to-br from-indigo-500 to-purple-500 text-white">
       <div className="max-w-6xl mx-auto">
