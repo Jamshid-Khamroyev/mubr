@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+html{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+*{
+    font-family: Manrope;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 168, 168);
+}

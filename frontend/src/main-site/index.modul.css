@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* FONLAR */
+#body {
+    scroll-behavior: smooth;
+    background: linear-gradient(to bottom right, #6366f1, #8b5cf6); /* faqat body'ga */
+    color: white;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* FONT CLASSLAR */
+.Itim {
+    font-family: 'Itim', cursive;
+}
+.Manrope {
+    font-family: 'Manrope', sans-serif;
+}
+.Poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* GLASSMORPHISM */
+.myblur {
+    backdrop-filter: blur(40px);
+}
+
+.none-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* SCROLLBAR (GLOBAL) */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+/* MAXSUS scroll YASHIRISH uchun class */
+.myscroll::-webkit-scrollbar {
+    width: 0;
+}
+.myscroll::-webkit-scrollbar-thumb {
+    background-color: black !important;
+}
