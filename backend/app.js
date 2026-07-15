@@ -49,7 +49,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 app.use(cors({
-  origin: ["https://uzun-quiz-arena.onrender.com", "https://admin-uzun-quiz-arena.onrender.com", "https://uzun-quiz-arena-adminstrator.onrender.com", "http://localhost:5174", "http://localhost:5173"],
+  origin: ["https://manager-mubr.onrender.com", "https://mubr.onrender.com", "https://admin-mubr.onrender.com"],
   credentials: true
 }));
 
