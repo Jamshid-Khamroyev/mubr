@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { hideLoad, showLoad } from "../reducers/load";
 import { useNavigate } from "react-router-dom";
 import LazyLoad from '../components/lazyImage'
+import notFound from '../assets/not-found.png'
 
 const News = () => {
   const {link} = useSelector(state => state.load)
@@ -40,7 +41,7 @@ const News = () => {
         <FaBullhorn className="text-teal-600 md:text-3xl text-2xl" />
         <h2 className="text-3xl font-semibold text-teal-600">Yangiliklar</h2>
       </div>
-
+        {news.length ? (
         <div className="grid grid-cols-1 md:px-5 px-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {news?.map((item) => (
             <div
@@ -67,6 +68,11 @@ const News = () => {
             </div>
           ))}
         </div>
+        ) : (
+          <div className="flex items-center justify-center w-full">
+            <img src={notFound} alt="not found" className="w-72" />
+          </div>
+        )}
     </section>
   );
 };

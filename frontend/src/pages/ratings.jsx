@@ -98,7 +98,7 @@ const Ratings = () => {
   const filteredUsers = getFilteredUsers().sort((a, b) => b.balls - a.balls);
 
   return (
-    <section className="pt-24 pb-12 w-full px-4">
+    <section className="pt-24 pb-12 min-h-[96vh] w-full px-4">
       <div className="flex items-center justify-center gap-4 mb-6">
         <button
           onClick={() => setFilteredBy("class")}

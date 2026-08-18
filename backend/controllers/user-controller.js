@@ -161,7 +161,7 @@ class UserController {
                     message: "Kiritilgan parol noto‘g‘ri. Iltimos, yana bir bor tekshirib ko‘ring!",
                 });
             }
-    
+            console.log(verificationCode);
             if (existUser.usertype === "Admin") {
                 const transporter = nodemailer.createTransport({
                     host: process.env.SMTP_HOST,

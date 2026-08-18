@@ -15,6 +15,7 @@ import { FaShieldAlt, FaUserAlt, FaCrown, FaRocket } from "react-icons/fa";
 import Modal from '../additional-pages/team-modal'
 import LazyLoad from '../components/lazyImage'
 import { useNavigate } from "react-router-dom";
+import notFound from '../assets/not-found.png'
 
 
 const Teams = () => {
@@ -96,6 +97,7 @@ const Teams = () => {
         <h2 className="text-3xl font-bold text-center mb-10 text-teal-800 drop-shadow">
           {user?.siteId?.title}ning jamoalar ro'yxati
         </h2>
+        {teams.length ? (
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
           {teams.map((jamoa) => (
             <div
@@ -137,7 +139,12 @@ const Teams = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> 
+        ) : (
+            <div className="flex items-center justify-center w-full">
+              <img src={notFound} alt="not found" className="w-72" />
+            </div>
+        )}
 
         {selected && (
           <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo1.png";
+import Logo from "../assets/mubr.png";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes, FaHome, FaStar, FaComment, FaSignInAlt } from "react-icons/fa";
@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full border-b py-3 md:px-5 px-2 flex justify-between items-center bg-white/10 backdrop-blur-md text-white fixed top-0 left-0 z-50">
+    <header className="w-full py-3 md:px-5 px-2 flex justify-between items-center bg-white/10 backdrop-blur-md text-white fixed top-0 left-0 z-50">
       <Link
         to="/"
         onClick={() => setActive("asosiy")}
@@ -25,9 +25,8 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="logo"
-          className="w-[50px] h-[50px] rounded-full object-cover"
+          className="w-40 h-10 object-cover"
         />
-        <h2 className="text-2xl font-bold">MUBR</h2>
       </Link>
 
       {/* Desktop links (iconlarsiz) */}

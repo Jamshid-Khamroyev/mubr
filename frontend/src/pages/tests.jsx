@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import image67 from ".././assets/6-7.png"
 import image89 from ".././assets/8-9.png"
 import image1011 from ".././assets/10-11.png"
+import notFound from '../assets/not-found.png'
 import image10112 from ".././assets/10-11-taabiiy.png"
 
 import {
@@ -93,7 +94,10 @@ const Tests = () => {
                 </div>
               </div>
             </div>
-          )) : <p className="text-center">Hozirda yangi topshiriqlar mavjud emas!</p>}
+          )) : <div className="flex items-center justify-center w-full">
+              <img src={notFound} alt="not found" className="w-72" />
+            </div>
+          }
         </div>
       </div>
     </div>

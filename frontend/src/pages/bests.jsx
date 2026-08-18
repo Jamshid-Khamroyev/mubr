@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import LazyLoad from '../components/lazyImage'
 import { hideLoad, showLoad } from "../reducers/load";
 import { useNavigate } from "react-router-dom";
+import notFound from '../assets/not-found.png'
+
 
 const Bests = () => {
   const [performers, setPerformers] = useState([]) 
@@ -43,30 +45,36 @@ const Bests = () => {
   }, []);
 
   return (
-      <div className="min-h-screen bg-white p-2 mt-24">
+      <div className="bg-white min-h-[80vh] p-2 mt-24">
         <div className="flex items-center justify-center gap-2 mb-6">
           <FaTrophy className="text-yellow-500 text-3xl" />
           <h2 className="text-3xl font-bold capitalize text-teal-700">{user?.siteId?.title}ning A'lolari</h2>
         </div>
-  
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {performers?.map((performer, index) => (
-            <div key={performer?._id} onClick={() => navigate(`/best/${performer?._id}`)} className="bg-white border border-teal-200 rounded-sm shadow-lg">
-              <LazyLoad src={performer?.image} height="h-44" widht="w-full"/>
-              <div className="p-1 border-t border-teal-300">
-                <div className="flex items-center justify-start gap-2 p-1">
-                  <div className="flex items-center gap-2 text-teal-500 mb-3">
-                    {getUserIcon(performer?.user?.balls)}
-                  </div>
+        
+        {performers.length ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {performers.length && performers?.map((performer, index) => (
+              <div key={performer?._id} onClick={() => navigate(`/best/${performer?._id}`)} className="bg-white border border-teal-200 rounded-sm shadow-lg">
+                <LazyLoad src={performer?.image} height="h-44" widht="w-full"/>
+                <div className="p-1 border-t border-teal-300">
+                  <div className="flex items-center justify-start gap-2 p-1">
+                    <div className="flex items-center gap-2 text-teal-500 mb-3">
+                      {getUserIcon(performer?.user?.balls)}
+                    </div>
 
-                  <h3 className="text-xl font-semibold text-teal-600 mb-2">
-                    {performer?.user?.username || "Maxfiy"} {performer?.user?.surname || "Maxfiy"}
-                  </h3>
+                    <h3 className="text-xl font-semibold text-teal-600 mb-2">
+                      {performer?.user?.username || "Maxfiy"} {performer?.user?.surname || "Maxfiy"}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex items-center justify-center w-full">
+            <img src={notFound} alt="not found" className="w-72" />
+          </div>
+        )}
       </div>
   )
 }
