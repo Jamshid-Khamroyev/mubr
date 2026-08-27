@@ -82,7 +82,7 @@ class TestController {
                 const [from, to] = test.forClass.split("-").map(Number);
                 return userClassNumber >= from && userClassNumber <= to;
             })
-            .filter(test => !getUser?.lastTests?.includes(String(test._id)))
+            // .filter(test => !getUser?.lastTests?.includes(String(test._id)))
             .map(test => ({
                 _id: test._id,
                 forClass: test.forClass,
@@ -120,10 +120,10 @@ class TestController {
                 return res.status(404).json({ ok: false, message: "Test topilmadi!" });
             }
     
-            const isCompleted = getUser.lastTests.some(t => t._id.toString() === testId);
-            if (isCompleted) {
-                return res.status(403).json({ ok: false, message: "Bu testni allaqachon bajargansiz!" });
-            }
+            // const isCompleted = getUser.lastTests.some(t => t._id.toString() === testId);
+            // if (isCompleted) {
+            //     return res.status(403).json({ ok: false, message: "Bu testni allaqachon bajargansiz!" });
+            // }
     
             const shuffledQuestions = _.shuffle(
                 test.questions.map(q => ({
